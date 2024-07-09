@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions</title>
+</head>
+<body>
+    <h2>SWITCH</h2>
+    <!-- <script>
+        let jour = prompt("Quel est le jour de la semaine? ")
+        switch(jour){
+            case "lundi" :
+                texte = "C'est le début de la semaine";
+                break;
+
+            case "mercredi" :
+                texte = "Le milieu de la semaine...";
+                break;
+
+            case "vendredi" :
+            case "jeudi" :
+                texte = "Bientôt le week-end";
+                break;
+
+            case "mardi" :
+                texte = "encore 4 jours de travail...";
+                break
+
+            default :
+                texte ="WEEK-END !!!"
+        }
+        document.write(texte);
+    </script> -->
+
+    <h2>OPERATEUR TERNAIRE OU IF INLINE</h2>
+    <script>
+        let texte1;
+        let a = 5;
+        if ( a < 5 ){
+            texte1 = "A est inférieur à 5";
+        } else {
+            texte1 = "A est supérieur ou égal à 5";
+        }
+        document.write("<p>" + texte1 + "</p>");
+        // La ligne suivante est équivalente au if précédent
+        texte1 = a < 5 ? "A est inférieur à 5" : "A est supérieur ou égal à 5";
+        document.write("<p>" + texte1 + "</p>")
+    </script>
+</body>
+</html>

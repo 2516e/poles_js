@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <h1>Variables</h1>
+    <button><a href="/intro.html">Home</a></button>
+    
+    <br>
+    <br>
+
+    <script>
+        var prenom; // déclaration variables avec "var"
+        let prenombis; // déclaration variables avec "let"
+        /* on peut aussi déclarer une variables sans utiliser de mots-clés */
+        prenomalt = "tg"; // déclaration variables sans mots-clé
+
+        /* Affectation
+            donner une valeur à une variable 
+                Opérateur : 
+                    =
+                Syntaxe : 
+                    variable = valeur;
+        */
+
+        var prenom = "Enzo";
+        document.write("Bonjour " + "<b>" + prenom + "</b>" + "<br>")
+        /* Cependant, si l'on utilise une variable qui n'a pas été initialisée, soit elle prend la valeur 'null'8 quand celle-ci à été déclarée mais n'a pas été affectée
+                                                                                soit on nous retourne une erreur qui nous indique que celle-ci 'is not defined' */
+        document.write("Prénom indéfini est égal à " + prenombis + "<br>")
+        document.write("Prénom indéfini est égal à " + " ' " + name + " ' " +  "mais rien ne s'affiche" + "<br>")
+
+        //TYPE DE CARACTERES 
+        /*
+            1. CHAINE DE CARACTERES : string
+                Une expression de type string est entourée de "" ou ''.
+        */
+       let texte = "\"l'arbre\"";
+       document.write(texte + "<br>")
+       let textebis = 'l\'arbre'; // il faut utiliser '\' pour que ' soit considérer comme un caractère
+       document.write(textebis + "<br>")
+
+       /*
+            2. NUMERIQUE : number 
+                Une expression numérique n'est pas délimitée par des caractères 
+        */
+       age = 52;
+
+       /*
+            3. BOOLEEN : boolean
+                Une expression booléenne ne peut prendre que 2 valeurs : 
+                    true/false
+        */
+       let vraiFaux = true;
+       vraiFaux = false;
+
+    </script>
+</body>
+</html>

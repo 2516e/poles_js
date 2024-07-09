@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau</title>
+</head>
+<body>
+    <h1>TABLEAU : Array</h1>
+    <p> un tableau est une variable ui va contenir plusieurs valeurs.
+        Pour déclarer un tableau, on utilise la synthaxe suivante
+    </p>
+    <p><code> let nomDeLAVAriable = [ valeur1, valeur2, ...]</code></p>
+    <p> Pour accéder à une valeur de ce tableau, on va utiliser son indice, c'est a dire sa position dans le tableau.
+    </p>
+    <p><code> nomDeLaVariable[indice]</code></p>
+    <p><mark> ⚠ la numérotation des indices commences à 0</mark></p>
+
+    <script>
+        let semaine = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
+        document.write("le type de la variable <i>semaine</i> est ")
+        document.write(typeof semaine);
+        document.write("<hr>");
+        document.write(semaine);
+        document.write("<hr>");
+        document.write("1<sup>er</sup> jour de la semaine (1<sup>ère</sup> valeur du tableau) : ");
+        document.write(semaine[0]);
+        document.write("<hr>");
+        document.write("Longueur du tableau (<code>semaine.length</code>) : ");
+        document.write(semaine.length);
+        document.write("<hr>");
+        document.write("Dernier jour de la semaine : ");
+        document.write(semaine[(semaine.length)-1]);
+        document.write("<hr>");
+        document.write("Quel est l'indice de <i>mercredi</i> ? <mark>(semaine.indexOf(\"Mercredi\")</mark> : ");
+        document.write(semaine.indexOf("mercredi"));
+        document.write("<hr>");
+
+
+        if (semaine.indexOf("mordi") == -1){
+            document.write("mordi n'est pas trouvé dans le tableau");
+        } else {
+            document.write(semaine.indexOf("mordi"));
+        }
+
+
+    </script>
+</body>
+</html>
