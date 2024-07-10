@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo</title>
+</head>
+<body>
+    <script>
+        //afficher les nombre compris entre 92 et 163
+        // let imax = 163;
+        // for (let i = 92; i<=imax ; i++){
+        //     document.write(i + "<br>")
+        // }
+        // for (let i = 92; i<=163 ; i++){
+        //     document.write( 163 - i + 92  + "<br>")
+        // }
+
+        /* 5. Affichez toutes les valeurs du tableau suivi du type de données de cette valeurs. Par exemple, 
+        • 5 - number
+        • bonjour - string
+        • false - boolean 
+        */
+        let tableau = [ 5, 5.2, "5.2", true, 5 > 3, 2 + 2, 2 + "2", [ 1, 2, 3] ];
+        for(i=0; i<=tableau.length; i++){
+            document.write(tableau[i] + " " + typeOf([i]))
+        }
+    </script>
+</body>
+</html>
