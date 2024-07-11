@@ -78,4 +78,21 @@ function tva(prix){
     return prix * 0.2
 }
 let tvaCalcule = tva(100)
-document.write(tvaCalcule)
+document.write(tvaCalcule);
+
+document.write("<hr>");
+//
+let maFonction = function (texte) {
+  document.write(texte + "<br>");
+}
+
+maFonction("Bonjour, nous sommes le jeudi");
+maFonction("11 juillet 2024");
+
+console.log("maFonction", typeof maFonction);
+document.write("<hr>");
+
+let fonctionFlechee = (arg1) => {
+  return arg1;
+}
+

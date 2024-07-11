@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les objets</title>
+</head>
+<body>
+    <p>
+        Une variable de type <i>object</i> va être constitué de :
+        <ul>
+            <li>
+                propriétés : ce sont des valeurs qui sont liées à l'objet.
+            </li>
+            <li>
+                méthodes : ce sont des fonctions qui sont liées à l'objet.
+            </li>
+        </ul>
+        Pour accéder aux propriétés ou aux méthodes d'un objet, on utilise le point <mark>.</mark>
+    </p>
+    <p>
+        Par exemple, <i>push</i> est une méthode d'un objet de type Array.
+    </p>
+    <p>
+        En JS, les strings sont des objets.
+    </p>
+    <script>
+        document.write("<hr>")
+        let str = "test";
+        document.write("La longueur de la chaîne de caractères ");
+        document.write("<mark>" + str + "</mark> ");
+        document.write("est : " + str.length + " caractères<br>");
+        document.write(str.toUpperCase());
+        let s = str.toUpperCase();
+        console.log("Quel est le caractère à la position de la lettre e dans str?", str.indexOf("e"));
+    </script>
+
+    <h2>
+        Déclarer un objet
+    </h2>
+    <script>
+        let personne = {
+            nom: "Cérien",
+            prenom: "Jean",
+            age: 33
+        };
+        console.log(personne);
+        document.write(personne.nom + "<br>");
+        let anneeEnCours = 2024;
+        document.write( "L'année de naissance est : " + (anneeEnCours - personne.age) + ". <br>");
+
+        let anneeNaissance = function(p) {
+            let anneeEnCours = 2024;
+            if (p.hasOwnProperty("age")){
+                return anneeEnCours - p.age;
+            } else {
+                throw "ERREUR L'argument n'a pas de propriété 'age'";
+            }
+        }
+        document.write("La même chose avec une fonction : " + anneeNaissance(personne));
+
+        document.write("<hr>")
+    </script>
+    <script src="js/objet.js"></script>
+</body>
+</html>
