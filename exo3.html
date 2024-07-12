@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXO</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        display: inline-block;
+      }
+      .rouge {
+        background-color: red;
+      }
+      .bleu {
+        background-color: blue;
+      }
+      #madiv {
+        width: 250px;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", function () {
+        document.querySelector("a").addEventListener("click", function (eventClick) {
+            eventClick.preventDefault();
+            document.querySelector("#resultat").innerHTML =
+              "Clic sur le lien objet";
+          });
+
+        
+
+        function aleatoire(min, max) {
+          return Math.floor(Math.random() * (max - min)) + min;
+        }
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+              color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+                
+        document.querySelector("#madiv").addEventListener("mouseenter", function (event) {
+          let topRandom = aleatoire(100, 500) + "px";
+          let leftRandom = aleatoire(100, 500) + "px";
+          let colorRandom = getRandomColor();
+          this.style.position = "absolute";
+          this.style.top = topRandom;
+          this.style.left = leftRandom;
+          this.style.backgroundColor = colorRandom
+        });
+
+        
+      });
+    </script>
+  </head>
+  <body>
+    <div id="madiv" class="rouge">texte</div>
+    <div class="rouge" onclick="console.log('click sur la div.rouge')">
+      rouge
+    </div>
+    <div class="bleu">bleu</div>
+    <a href="objet.html">Objets</a>
+    <hr />
+    <div id="resultat">Exercice 3</div>
+  </body>
+</html>
