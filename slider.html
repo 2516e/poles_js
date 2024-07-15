@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        #slider {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            border: 1px solid;
+            margin: auto;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #prev {
+            left: 10px;
+        }
+
+        #next {
+            right: 10px;
+        }
+
+        #stop {
+            left: 44%;
+            opacity: 0;
+        }
+        #stop:hover{
+            opacity: 0.5;
+        }
+
+        .exo{
+            text-align: center;
+        }
+
+        [id ^= 'image']{
+            border : 1px solid;
+            padding: 1px 5px;
+            margin-top: 10px;
+            text-decoration: none;
+            color: red;
+            display: inline-block;
+        }
+    </style>
+    <script>
+
+
+        window.addEventListener("load", function () {
+
+            
+            const slideImages = document.querySelectorAll(".slide");
+            // slideImage =" quelque chose";
+            // slideImages.forEach(function (elementSlide) {
+            //     elementSlide.classList.add("active");
+            // });
+
+
+            let pos = 0;
+            document.querySelector("#next").addEventListener("click", function(event_next){
+
+                    //'pos' augmente 1 sauf si on était positionné à la dernière image, dans ce cas pos vaut 0
+                    if( pos == slideImages.length - 1){
+                        pos = 0;
+                    } else {
+                        pos++
+                    }
+
+                    //Retire la class 'active' à toutes les images
+                    slideImages.forEach(function(elementSlide){
+                        elementSlide.classList.remove("active")
+                    })
+
+                    //Ajoute la class 'active' à la prochaine image
+                    slideImages[pos].classList.add("active");           
+            });
+
+
+            document.querySelector("#prev").addEventListener("click", function(event_next){
+                
+                if ( pos == 0 ){
+                    pos = slideImages.length - 1;
+                } else {
+                    pos --;
+                }
+                
+                slideImages.forEach(function(elementSlide){
+                    elementSlide.classList.remove("active")
+                });
+                
+                slideImages[pos].classList.add("active");
+
+            });
+
+
+            //la fonction setInterval permet d'exécuter une fonction régulièrement après un certain laps de temps (en ms)
+            let timer = setInterval(function(autoScroll){
+                //on peut déclencher un évènement avec la méthode 'dispatchEvent'
+                document.querySelector("#next").dispatchEvent(new Event("click"));
+            }, 5000)
+
+
+            document.querySelector("#stop").addEventListener("click", function(){
+                clearInterval(timer);
+            })
+
+
+            // document.querySelector("#image1").addEventListener("click", function(){
+            //     slideImages.forEach(function(elementSlide){
+            //         elementSlide.classList.remove("active")
+            //     })
+            //     slideImages[0].classList.add("active");  
+            //     clearInterval(timer);
+            // });
+            // document.querySelector("#image2").addEventListener("click", function(){
+            //     slideImages.forEach(function(elementSlide){
+            //         elementSlide.classList.remove("active")
+            //     })
+            //     slideImages[1].classList.add("active"); 
+            //     clearInterval(timer);
+            // });
+            // document.querySelector("#image3").addEventListener("click", function(){
+            //     slideImages.forEach(function(elementSlide){
+            //         elementSlide.classList.remove("active")
+            //     })
+            //     slideImages[2].classList.add("active"); 
+            //     clearInterval(timer);
+            // });
+        
+
+            //Méthode améliorée ;
+            
+            document.querySelectorAll("[ id ^= 'image' ]").forEach(function(element){
+                element.addEventListener("click", function(event){
+                    const slideImages = document.querySelectorAll(".slide");
+                    slideImages.forEach(function(elementSlide){
+                    elementSlide.classList.remove("active")
+                    })
+                    let identifiant = this.id;
+                    let numero = parseInt(identifiant.replace("image", ""));
+                    numero--;
+                    slideImages[numero].classList.add("active")
+                    clearInterval(timer);
+                });
+            })
+        
+        });
+    </script>
+</head>
+<div id="slider">
+    <img src="/img/image1.webp" alt="" class="slide active">
+    <img src="/img/image2.webp" alt="" class="slide">
+    <img src="/img/image3.webp" alt="" class="slide">
+    <button id="prev" class="nav">&lt;</button>
+    <button id="next" class="nav">&gt;</button>
+    <button class="nav" title="arrêter le slider" id="stop">⏸</button>
+</div>
+<hr>
+<!-- EXERCICE : lorsque l'utilisateur clique sur un lien image1, image2 ou image3,
+                    l'image affichée par le slider doit être la 1ère ou la 2ième
+                    ou la 3ième. -->
+<div class="exo">
+    <a href="#1" id="image1">1</a>
+    <a href="#2" id="image2">2</a>
+    <a href="#3" id="image3">3</a>
+</div>
+
+<body>
+</body>
+</html>
