@@ -6,20 +6,69 @@
     <title>Devine</title>
     <script src="function.js"></script>
     <script src="devine.js" defer></script>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        html{
+            font-family: poppins;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        form{
+            background-color: darkgray;
+            width: 500px;
+            margin: auto;
+            padding: 20px 0 ;
+            border-radius: 10px;
+            height: 200px;
+        }
+
+        #error {
+            color: red;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        input {
+            width: 20px;
+            border-radius: 10px;
+            border: none;
+            margin-left: 10px;
+            padding-left: 15px;
+        }
+
+        button {
+            padding: 5px 10px ;
+            border-radius: 5px;
+            border: none;
+            border: solid 1px rgb(77, 76, 76);
+            background-color: rgb(121, 120, 120);
+            color: rgb(255, 255, 255);
+        }
+
+    </style>
 </head>
 <body>
     <h1>
         Devine un nombre entre 1 et 10
     </h1>
     <form action="">
+        <h2>Guess the number</h2>
         <div class="form-group">
             <label for="">Tapez un nombre entre 1 et 10</label>
             <input type="text" name="nombre" id="nombre">
         </div>
         <br>
-        <button type="submit">Essayer</button>
+        <div class="btn">
+            <button type="submit">Essayer</button>
+        </div>
     </form>
-
+    <br>
     <div id="affichage"></div>
+    <div id="error"></div>
 </body>
 </html>
