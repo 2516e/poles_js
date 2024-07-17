@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="jquery.js" defer></script>
+    <style>
+
+        #blue{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+
+        #onizuka{
+            height: 100px
+        }
+        #bordered-div{
+            height: 100px;
+            width: 100px;
+            border: 2px solid;
+        }
+
+        #slider {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            border: 1px solid;
+            margin: auto;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Exercice 1</h1>
+    <div id="blue"></div>
+    <br>
+    <button id="change">Change</button>
+    <hr>
+    <h1>Exercice 2</h1>
+    <img src="/img/image4.png" alt="" height="100px" id="onizuka">
+    <hr>
+    <h1>Exercice 3</h1>
+    <input type="color" id="color">
+    <hr>
+    <h1>Exercice 4</h1>
+    <div id="bordered-div"></div>
+    <hr>
+    <h1>Exercice 5</h1>
+    <div id="slider">
+        <img src="/img/image1.webp" alt="" class="slide active" id="image1">
+        <img src="/img/image2.webp" alt="" class="slide" id="image2">
+        <img src="/img/image3.webp" alt="" class="slide" id="image3">
+        <img src="/img/image4.png" alt="" class="slide" id="image4">
+        <img src="/img/image5.jpg" alt="" class="slide" id="image5">
+    </div>
+</body>
+</html>
